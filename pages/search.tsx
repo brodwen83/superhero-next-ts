@@ -16,9 +16,19 @@ function SearchPage(props: SearchProps) {
     values: SearchValue,
     { setSubmitting }: FormikHelpers<SearchValue>
   ) => {
-    console.log("values", values);
+    try {
+      const response = await fetch(
+        `/api/v1/heroes/search?name=${values.searchKeyword}`
+      );
+      const data: HeroSearchResponse = await response.json();
+      setHeroResponse(data);
+    } catch (error) {
+      console.error(error);
+    }
     setSubmitting(false);
   };
+
+  console.log("heroResponse", heroResponse);
 
   return (
     <>
