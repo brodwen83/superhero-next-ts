@@ -69,6 +69,7 @@ function SearchForm({ onSearchSubmit }: SearchFormProps) {
                   value={formik.values.searchKeyword}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
+                  autoFocus
                 />
                 <InputRightElement width="8.5rem">
                   <Button
@@ -77,6 +78,8 @@ function SearchForm({ onSearchSubmit }: SearchFormProps) {
                     size="sm"
                     loadingText="Searching..."
                     isLoading={formik.isSubmitting}
+                    variant="solid"
+                    colorScheme="facebook"
                     mr={2}
                   >
                     Search

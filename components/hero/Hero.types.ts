@@ -2,6 +2,7 @@ export interface HeroSearchResponse {
   response: string;
   "results-for": string;
   results: Hero[];
+  error?: string | undefined;
 }
 
 export interface Hero {
