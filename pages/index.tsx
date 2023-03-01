@@ -1,4 +1,4 @@
-import { Flex, Link } from "@chakra-ui/react";
+import { Button, Flex, Link } from "@chakra-ui/react";
 import Head from "next/head";
 import NextLink from "next/link";
 
@@ -15,7 +15,9 @@ export default function Home() {
       <main>
         <Flex justifyContent="center" alignItems="center" h="100vh">
           <NextLink href={"/search"} passHref legacyBehavior>
-            <Link>Search</Link>
+            <Button as={Link} colorScheme={"facebook"} padding={8}>
+              Search
+            </Button>
           </NextLink>
         </Flex>
       </main>
